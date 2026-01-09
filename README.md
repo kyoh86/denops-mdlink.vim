@@ -1,6 +1,6 @@
-# denops-boilerplate.vim
+# denops-mdlink.vim
 
-Superpractilisticexpermientocious.
+Vim/Neovim plugin to paste url into markdown powered by denops.vim
 
 ## Usage
 
@@ -11,7 +11,7 @@ Superpractilisticexpermientocious.
 
 ## doc
 
-[./doc/boilerplate.txt](./doc/boilerplate.txt)
+[./doc/mdlink.txt](./doc/mdlink.txt)
 
 # License
 
