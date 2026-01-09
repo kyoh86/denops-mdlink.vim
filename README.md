@@ -2,6 +2,8 @@
 
 Vim/Neovim plugin to paste url into markdown powered by denops.vim
 
+https://github.com/user-attachments/assets/92b68bd4-014c-4dbc-a30e-5206fbeee73e
+
 ## Usage
 
 Copy a URL to your clipboard, then run:
