@@ -45,6 +45,11 @@ mdlink#setup()
                                                         *mdlink-commands*
 Commands ~
 
+                                                        *:MarkdownUrlPaste*
+MarkdownUrlPaste
+	Clipboard にある URL を取得し、タイトルを取得できれば
+	`[title](url)` を、失敗した場合は URL をそのまま挿入する。
+
 
 ==============================================================================
                                                          *mdlink-keymaps*

@@ -4,10 +4,14 @@ Vim/Neovim plugin to paste url into markdown powered by denops.vim
 
 ## Usage
 
-1. Fork this repository to `denops-xxx.vim`
-1. Call `init.ts --name hogehoge --description fugafuga` to replace names in the
-   repository
-1. Delete this section from README.md
+Copy a URL to your clipboard, then run:
+
+```
+:MarkdownUrlPaste
+```
+
+If the page title is fetched, it inserts `[title](url)`; otherwise it inserts
+the URL as-is.
 
 ## doc
 
