@@ -1,6 +1,6 @@
 # denops-mdlink.vim
 
-Vim/Neovim plugin to paste url into markdown powered by denops.vim
+Vim/Neovim plugin to paste url into markdown link powered by denops.vim
 
 https://github.com/user-attachments/assets/92b68bd4-014c-4dbc-a30e-5206fbeee73e
 

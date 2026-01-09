@@ -1,0 +1,68 @@
+*mdlink.txt* URL Markdownリンク形式貼り付けプラグイン
+                                                  *mdlink* *denops-mdlink.txt*
+
+Author: kyoh86 <me@kyoh86.dev>
+License: MIT License
+
+
+==============================================================================
+                                                             *mdlink-contents*
+Contents ~
+
+Install           |mdlink-install|
+Setup             |mdlink-setup|
+Function          |mdlink-function|
+Commands          |mdlink-commands|
+Keymaps           |mdlink-keymaps|
+Denops commands   |mdlink-denops-commands|
+
+
+==============================================================================
+                                                              *mdlink-install*
+インストール ~
+
+クリップボードにある URL を取得し、ページタイトルが取得できれば
+`[title](url)` の Markdown 形式で挿入します。取得に失敗した場合は
+URL をそのまま挿入します。
+
+
+denops.vim が必要です。
+
+* vim-denops/denops.vim https://github.com/vim-denops/denops.vim
+
+
+==============================================================================
+                                                                *mdlink-setup*
+設定 ~
+
+設定は任意です。ネットワークアクセスが必要なので、Deno 実行時に
+ネットワークを許可してください。
+
+
+==============================================================================
+                                                             *mdlink-commands*
+コマンド ~
+
+MarkdownUrlPaste
+	Clipboard にある URL を取得し、タイトルを取得できれば
+	`[title](url)` を、失敗した場合は URL をそのまま挿入する。
+
+	以下のレジスタから URL を探します。
+	- `*`
+	- `+`
+
+
+==============================================================================
+                                                              *mdlink-keymaps*
+キーマップ ~
+
+デフォルトのマッピングはありません。
+
+
+==============================================================================
+                                                      *mdlink-denops-commands*
+Denops コマンド ~
+
+paste_markdown_url
+	`:MarkdownUrlPaste` から呼ばれる denops dispatcher。URL 取得と
+	タイトル抽出、挿入を行う。

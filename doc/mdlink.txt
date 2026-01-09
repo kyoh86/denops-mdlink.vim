@@ -1,12 +1,12 @@
-*mdlink.txt* A Vim plugin as ...
-                                        *mdlink* *denops-mdlink.txt*
+*mdlink.txt* A plugin to paste url into markdown link powered by denops.vim
+                                                  *mdlink* *denops-mdlink.txt*
 
 Author: kyoh86 <me@kyoh86.dev>
 License: MIT License
 
 
 ==============================================================================
-                                                        *mdlink-contents*
+                                                             *mdlink-contents*
 Contents ~
 
 Install           |mdlink-install|
@@ -18,7 +18,7 @@ Denops commands   |mdlink-denops-commands|
 
 
 ==============================================================================
-                                                         *mdlink-install*
+                                                              *mdlink-install*
 Install ~
 
 You need to install |denops.vim| as a dependency.
@@ -27,33 +27,53 @@ You need to install |denops.vim| as a dependency.
 
 
 ==============================================================================
-                                                           *mdlink-setup*
+                                                                *mdlink-setup*
 Setup ~
 
+Configuration is optional. The plugin reads a URL from the clipboard and
+inserts a Markdown link when the page title is available.
+
+Network access is required. Allow network access for the Deno runtime.
 
 ==============================================================================
-                                                        *mdlink-function*
+                                                             *mdlink-function*
 Function ~
 
-                                                         *mdlink#setup()*
+                                                              *mdlink#setup()*
 mdlink#setup()
 
-	TODO
+	Not provided.
 
 
 ==============================================================================
-                                                        *mdlink-commands*
+                                                             *mdlink-commands*
 Commands ~
 
-                                                        *:MarkdownUrlPaste*
+                                                           *:MarkdownUrlPaste*
 MarkdownUrlPaste
-	Clipboard にある URL を取得し、タイトルを取得できれば
-	`[title](url)` を、失敗した場合は URL をそのまま挿入する。
+	Read a URL from the clipboard and insert `[title](url)` when the title is
+	available. If title fetch fails, insert the URL as-is.
+
+	Checks the following registers:
+	- `*`
+	- `+`
 
 
 ==============================================================================
-                                                         *mdlink-keymaps*
+                                                              *mdlink-keymaps*
 Keymaps ~
+
+No default mappings.
+
+
+==============================================================================
+                                                      *mdlink-denops-commands*
+Denops commands ~
+
+                                                                *mdlink-paste*
+paste_markdown_url
+	Denops dispatcher invoked by `:MarkdownUrlPaste`. Reads the URL, fetches
+	the title, and inserts the result.
 
 
 ==============================================================================
