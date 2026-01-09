@@ -1,8 +1,7 @@
 import type { Denops } from "@denops/std";
 import * as fn from "@denops/std/function";
 import { ensure, is } from "@core/unknownutil";
-
-const TITLE_PATTERN = /<title[^>]*>([\s\S]*?)<\/title>/i;
+import { DOMParser } from "jsr:@b-fuze/deno-dom@^0.1.39";
 
 export function main(denops: Denops) {
   denops.dispatcher = {
@@ -37,23 +36,12 @@ async function fetchTitle(url: string): Promise<string | null> {
       return null;
     }
     const html = await res.text();
-    const match = TITLE_PATTERN.exec(html);
-    if (!match) {
-      return null;
-    }
-    return decodeHtmlEntities(match[1].trim());
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const title = doc?.querySelector("title")?.textContent?.trim();
+    return title || null;
   } catch {
     return null;
   }
-}
-
-function decodeHtmlEntities(value: string): string {
-  return value
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'");
 }
 
 async function insertTextAtCursor(denops: Denops, text: string): Promise<void> {
