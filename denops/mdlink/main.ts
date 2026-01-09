@@ -1,7 +1,7 @@
 import type { Denops } from "@denops/std";
 import * as fn from "@denops/std/function";
 import { ensure, is } from "@core/unknownutil";
-import { DOMParser } from "jsr:@b-fuze/deno-dom@^0.1.39";
+import { DOMParser } from "@b-fuze/deno-dom";
 
 export function main(denops: Denops) {
   denops.dispatcher = {
