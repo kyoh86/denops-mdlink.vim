@@ -23,7 +23,7 @@
     "@b-fuze/deno-dom": "jsr:@b-fuze/deno-dom@^0.1.56",
     "@denops/std": "jsr:@denops/std@^8.2.0",
     "@denops/test": "jsr:@denops/test@^4.0.0",
-    "@std/assert": "jsr:@std/assert@^1.0.18",
-    "@std/cli": "jsr:@std/cli@^1.0.27"
+    "@std/assert": "jsr:@std/assert@^1.0.19",
+    "@std/cli": "jsr:@std/cli@^1.0.28"
   }
 }
